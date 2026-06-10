@@ -1,5 +1,7 @@
 # QuantQuest 🗺️
 
+https://jhenao0803.github.io/quantquest/
+
 An interactive, game-style quant finance curriculum: 10 missions taking you from
 Python fundamentals (coming from R) to a full alpha research framework.
 
