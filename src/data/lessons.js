@@ -1,14 +1,13 @@
 // Jorge's quant curriculum as game missions.
 // Every lesson is playable: briefing → code arena → trap room → boss quiz.
-// "completed" = cleared before this app existed; everything else unlocks
-// by beating the previous boss quiz (or force-opening).
+// Everyone starts at Mission 1; each mission unlocks by beating the previous
+// boss quiz (or via the "open anyway" force-open button).
 
 export const lessons = [
   {
     id: 1,
     title: "Python Fundamentals",
     subtitle: "Variables, lists, loops — through the lens of the Sharpe Ratio",
-    status: "completed",
     icon: "🐍",
     concepts: ["Variables", "Lists", "Loops", "Sharpe Ratio", "Win Rate"],
     mission: "Compute a real Sharpe Ratio and win rate from a week of Apple returns — using nothing but raw Python. No libraries, no training wheels.",
@@ -104,7 +103,6 @@ print(f"Annualized Sharpe: {sharpe_annual:.2f}")
     id: 2,
     title: "NumPy & Pandas",
     subtitle: "Your data.frame instincts, supercharged",
-    status: "completed",
     icon: "🐼",
     concepts: ["DataFrame", "Vectorization", "Filtering", "pct_change", "yfinance"],
     mission: "Kill the loop. Recompute everything from Mission 1 on a full price series with zero for-loops — pure vectorized NumPy.",
@@ -188,7 +186,6 @@ print(f"Annualized Sharpe: {returns.mean() / returns.std() * np.sqrt(252):.2f}")
     id: 3,
     title: "Factor Models",
     subtitle: "CAPM, Fama-French, and the precise meaning of alpha",
-    status: "completed",
     icon: "📐",
     concepts: ["CAPM", "Beta", "Alpha", "Fama-French 3-Factor", "R-squared"],
     mission: "Estimate alpha and beta from scratch with the covariance formula — then shrink the sample and watch your 'alpha' turn into noise.",
@@ -282,7 +279,6 @@ print(f"R-squared:       {r_squared:.3f}")
     id: 4,
     title: "Backtesting",
     subtitle: "MA crossovers, and the two ways backtests lie",
-    status: "completed",
     icon: "⏪",
     concepts: ["MA Crossover", "Look-ahead Bias", "Whipsawing", "Cumulative Returns", "Signal Lag"],
     mission: "Backtest a moving-average crossover, then deliberately break it: remove the signal lag and measure your look-ahead bias as a real number.",
@@ -387,7 +383,6 @@ print(f"Position flips: {trades}")
     id: 5,
     title: "Time Series & EDA",
     subtitle: "Your first fight with real, messy data",
-    status: "locked",
     icon: "🔍",
     concepts: ["EDA", "Seasonality", "Missing Data", "Outliers", "Zeros vs NaN"],
     mission: "Profile a messy sales dataset like you'd profile a new market: hunt down the missing days, the suspicious zeros, and the weekly rhythm hiding in the noise.",
@@ -486,7 +481,6 @@ for d, name in enumerate(["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]):
     id: 6,
     title: "Feature Engineering",
     subtitle: "Merging datasets, lag features, and leak-proofing",
-    status: "locked",
     icon: "🛠️",
     concepts: ["Joins/Merges", "Lag Features", "Rolling Features", "Leakage"],
     mission: "Build lag and rolling features that a model could ACTUALLY have used on the day — and prove to yourself that one wrong shift leaks the future.",
@@ -590,7 +584,6 @@ print("In production it would not exist at prediction time. Score: fantasy.")
     id: 7,
     title: "Building a Forecast Model",
     subtitle: "Regression forecasting with honest validation",
-    status: "locked",
     icon: "📈",
     concepts: ["Time-Series CV", "Walk-Forward", "Baselines", "Error Metrics"],
     mission: "Train the same model twice — once validated with shuffled data, once walk-forward — and catch the shuffled version lying to you.",
@@ -699,7 +692,6 @@ print("If your model can't beat the baseline out-of-sample, it's decoration.")
     id: 8,
     title: "Factor-Based Stock Screening",
     subtitle: "Multi-factor ranking and your first long/short",
-    status: "locked",
     icon: "🎯",
     concepts: ["Factor Scores", "Ranking", "Long/Short", "Decile Spread"],
     mission: "Rank 200 stocks on a composite value+momentum score, go long the top decile and short the bottom — and measure the spread that systematic funds live on.",
@@ -800,7 +792,6 @@ print("Long the top, short the bottom — the market cancels out.")
     id: 9,
     title: "Portfolio Construction & Risk",
     subtitle: "Position sizing, diversification math, Sharpe optimization",
-    status: "locked",
     icon: "⚖️",
     concepts: ["Position Sizing", "Correlation", "Max Drawdown", "Kelly Criterion"],
     mission: "Prove the only free lunch in finance: combine two so-so strategies into a portfolio with a better Sharpe than either — then find the sizing that maximizes it.",
@@ -903,7 +894,6 @@ for w in [0.0, 0.25, 0.5, 0.75, 1.0]:
     id: 10,
     title: "Alpha Research Framework",
     subtitle: "Hypothesis testing, overfitting defense, the team memo",
-    status: "locked",
     icon: "🏆",
     concepts: ["Hypothesis Testing", "Multiple Testing", "Out-of-Sample", "Research Memo"],
     mission: "Generate 20 completely random 'signals', pick the best one in-sample, and watch it crumble out-of-sample. Then never trust a single backtest again.",

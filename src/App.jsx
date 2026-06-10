@@ -56,8 +56,8 @@ export default function App() {
     setToast(`+${amount} XP — ${label}`);
   };
 
-  // A lesson counts as cleared if it was finished pre-app, or its boss quiz was aced here.
-  const isCleared = (l) => l.status === "completed" || !!progress.quizPassed[l.id];
+  // Everyone starts at Mission 1 — a lesson is cleared only by acing its boss quiz.
+  const isCleared = (l) => !!progress.quizPassed[l.id];
   // Unlocked = first lesson, previous cleared, or force-opened.
   const isUnlocked = (l) =>
     l.id === 1 || isCleared(l) || isCleared(lessons[l.id - 2]) || !!progress.forcedOpen[l.id];
